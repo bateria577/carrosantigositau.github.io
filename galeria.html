@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galeria Histórica - Classic Motors</title>
+    
+    <!-- Bibliotecas -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Bungee+Inline&family=Courier+Prime:wght@400;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --vintage-cream: #F5E6CA;
+            --vintage-blue: #3E5C76;
+            --vintage-orange: #D9534F;
+            --chrome: #BDC3C7;
+        }
+        body { 
+            background-color: var(--vintage-cream); 
+            font-family: 'Courier Prime', monospace;
+        }
+        .retro-title { font-family: 'Bungee Inline', cursive; }
+        .photo-card { 
+            border: 4px solid var(--chrome); 
+            box-shadow: 6px 6px 0px #7F8C8D;
+            transition: all 0.3s ease;
+        }
+        .photo-card:hover { 
+            transform: translate(-4px, -4px);
+            box-shadow: 10px 10px 0px var(--vintage-orange);
+            border-color: var(--vintage-orange);
+        }
+        .filter-btn {
+            border: 2px solid var(--vintage-blue);
+            transition: all 0.2s;
+        }
+        .filter-btn.active {
+            background-color: var(--vintage-blue);
+            color: white;
+        }
+    </style>
+</head>
+<body class="text-slate-800">
+
+    <!-- Navbar de Navegação -->
+    <nav class="bg-[#3E5C76] text-white p-4 sticky top-0 z-50 shadow-md">
+        <div class="container mx-auto flex justify-between items-center">
+            <a href="index.html" class="retro-title text-lg hover:text-orange-400 transition flex items-center">
+                <span class="mr-2">←</span> VOLTAR PARA HOME
+            </a>
+            <h1 class="retro-title text-xl hidden md:block tracking-widest">MEMÓRIA AUTOMOTIVA</h1>
+        </div>
+    </nav>
+
+    <!-- Cabeçalho -->
+    <header class="py-16 text-center px-4">
+        <h2 class="retro-title text-4xl md:text-6xl text-[#3E5C76] mb-4">Álbuns de Época</h2>
+        <p class="text-xl text-gray-700 max-w-2xl mx-auto border-b-2 border-orange-500 pb-4">
+            Explore nossas edições anteriores. Clique nos cards para abrir o álbum completo no Google Fotos.
+        </p>
+    </header>
+
+    <!-- Filtros por Ano -->
+    <div class="container mx-auto px-4 mb-12 flex flex-wrap justify-center gap-4">
+        <button onclick="filterGallery('todos', this)" class="filter-btn active px-8 py-2 font-bold uppercase tracking-tighter">Todos</button>
+        <button onclick="filterGallery('2025', this)" class="filter-btn bg-white px-8 py-2 font-bold uppercase tracking-tighter">2025</button>
+        <button onclick="filterGallery('2024', this)" class="filter-btn bg-white px-8 py-2 font-bold uppercase tracking-tighter">2024</button>
+        <button onclick="filterGallery('2023', this)" class="filter-btn bg-white px-8 py-2 font-bold uppercase tracking-tighter">2023</button>
+    </div>
+
+    <!-- Grid de Álbuns -->
+    <main class="container mx-auto px-4 pb-24">
+        <div id="gallery-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+            
+            <!-- Álbum 2025 -->
+            <a href="COLE_AQUI_LINK_GOOGLE_FOTOS_2025" target="_blank" class="photo-card bg-white p-4 block group" data-year="2025">
+                <div class="relative overflow-hidden aspect-video mb-4">
+                    <img src="https://images.unsplash.com/photo-1583121274602-3e2820c69888?auto=format&fit=crop&q=80&w=800" 
+                         alt="Capa 2025" 
+                         class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-[#3E5C76]/80 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                        <span class="text-white font-bold border-2 border-white px-6 py-2">ABRIR GOOGLE FOTOS</span>
+                    </div>
+                </div>
+                <div class="flex justify-between items-end border-t border-gray-200 pt-4">
+                    <div>
+                        <span class="text-orange-600 font-bold text-sm uppercase">Edição 2025</span>
+                        <h3 class="retro-title text-xl">O Brilho do Cromo</h3>
+                    </div>
+                    <span class="text-2xl">↗</span>
+                </div>
+            </a>
+
+            <!-- Álbum 2024 -->
+            <a href="COLE_AQUI_LINK_GOOGLE_FOTOS_2024" target="_blank" class="photo-card bg-white p-4 block group" data-year="2024">
+                <div class="relative overflow-hidden aspect-video mb-4">
+                    <img src="https://images.unsplash.com/photo-1516344362635-1fe39d41c811?auto=format&fit=crop&q=80&w=800" 
+                         alt="Capa 2024" 
+                         class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-[#3E5C76]/80 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                        <span class="text-white font-bold border-2 border-white px-6 py-2">ABRIR GOOGLE FOTOS</span>
+                    </div>
+                </div>
+                <div class="flex justify-between items-end border-t border-gray-200 pt-4">
+                    <div>
+                        <span class="text-orange-600 font-bold text-sm uppercase">Edição 2024</span>
+                        <h3 class="retro-title text-xl">Motores Lendários</h3>
+                    </div>
+                    <span class="text-2xl">↗</span>
+                </div>
+            </a>
+
+            <!-- Álbum 2023 -->
+            <a href="COLE_AQUI_LINK_GOOGLE_FOTOS_2023" target="_blank" class="photo-card bg-white p-4 block group" data-year="2023">
+                <div class="relative overflow-hidden aspect-video mb-4">
+                    <img src="https://images.unsplash.com/photo-1517520287167-4bda64282b54?auto=format&fit=crop&q=80&w=800" 
+                         alt="Capa 2023" 
+                         class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-[#3E5C76]/80 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                        <span class="text-white font-bold border-2 border-white px-6 py-2">ABRIR GOOGLE FOTOS</span>
+                    </div>
+                </div>
+                <div class="flex justify-between items-end border-t border-gray-200 pt-4">
+                    <div>
+                        <span class="text-orange-600 font-bold text-sm uppercase">Edição 2023</span>
+                        <h3 class="retro-title text-xl">Clássicos de Ouro</h3>
+                    </div>
+                    <span class="text-2xl">↗</span>
+                </div>
+            </a>
+
+        </div>
+    </main>
+
+    <!-- Rodapé -->
+    <footer class="bg-slate-900 text-white py-8 text-center border-t-4 border-orange-600">
+        <p class="opacity-70 text-sm tracking-widest uppercase">Classic Motors - Registros Históricos</p>
+    </footer>
+
+    <script>
+        function filterGallery(year, btn) {
+            // Atualiza botões
+            document.querySelectorAll('.filter-btn').forEach(b => {
+                b.classList.remove('active', 'bg-[#3E5C76]', 'text-white');
+                b.classList.add('bg-white');
+            });
+            btn.classList.add('active', 'bg-[#3E5C76]', 'text-white');
+            btn.classList.remove('bg-white');
+
+            // Filtra os cards
+            const cards = document.querySelectorAll('.photo-card');
+            cards.forEach(card => {
+                if (year === 'todos' || card.getAttribute('data-year') === year) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+    </script>
+</body>
+</html>
